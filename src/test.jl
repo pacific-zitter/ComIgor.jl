@@ -7,17 +7,28 @@ using CategoricalArrays
 using Base.Filesystem
 using TableView
 win=Window()
-Interact.
+
 # --
 w32 = pyimport("win32com.client")
-ics = pyimport("win32com.client.constants")
-w32.
-CategoricalArray(w,ordered=true)
+py"""
+    import win32com.client as  w32
+    """
+igor = py"""w32.Dispatch("IgorPro.Application")"""
 
-function getmethods(comobject)
-    functionlist = comobject |> propertynames |>  x -> OrderedDict(gensym.(x).=>x)
+A=py"$(w32.constants)"
+pyimport("weakref")
+PyDict(igorc)
+PyDict{String,Int32}(A.__dicts__[1])
+
+
+
+for i in 1:1000
+    igor.SendToHistory(0,"hey")
 end
 
+function getmethods(comobject)
+    functionlist = comobject |> keys
+end
 w = getmethods(w32)
 
 
@@ -25,16 +36,6 @@ q=TableView.showtable(w);
 
 body!(win,w)
 w32.__file__ |> show
-igor = w32.Dispatch("IgorPro.Application.6")
+igor = w32.Get("IgorPro.Application.6")
 
 igormod = w32.gencache.GetModuleForProgID("IgorPro.Application.6") |> show
-
-
-
-r=getmethods(igormod)
-showtable(r)
-
-q=igormod."Application"
-
-r=q()
-r.__dir__()
