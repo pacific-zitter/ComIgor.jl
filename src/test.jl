@@ -1,39 +1,40 @@
 using PyCall
 using Blink
-
-
-igpath = joinpath("C:/AsylumResearch","Igor Pro Folder","Igor.exe")
+using Interact
+import TableWidgets
+using Tables
+using CategoricalArrays
+using Base.Filesystem
+using TableView
+win=Window()
+Interact.
+# --
 w32 = pyimport("win32com.client")
-w32.gencache.EnsureDispatch("IgorPro.Application");
+ics = pyimport("win32com.client.constants")
+w32.
+CategoricalArray(w,ordered=true)
 
-igor = w32.Dispatch("IgorPro.Application")
-io = IOBuffer()
-igor.Status1
-igor.Visible
-q= propertynames(igor) .|> x->println(x)
-y |> typeof
+function getmethods(comobject)
+    functionlist = comobject |> propertynames |>  x -> OrderedDict(gensym.(x).=>x)
+end
 
-igor.Visible = true
-
-# PyCall.pyptr_query(igo)
-PyCall.python_cmd(`makepy`) |> run
+w = getmethods(w32)
 
 
-y = w32.selecttlb.SelectTlb()
+q=TableView.showtable(w);
 
-y.Resolve()
+body!(win,w)
+w32.__file__ |> show
+igor = w32.Dispatch("IgorPro.Application.6")
 
-igortlb=getproperty(y,:dll)
+igormod = w32.gencache.GetModuleForProgID("IgorPro.Application.6") |> show
 
-r = w32.pythoncom
 
-ig=r.LoadTypeLib(igortlb)
 
-q=r |> propertynames .|> String
+r=getmethods(igormod)
+showtable(r)
 
-qq = q .* '\n'
+q=igormod."Application"
 
-HTML(join(qq))
-w = Window()
-
-Blink.AtomShell.install()
+r=q()
+r.__dir__()
