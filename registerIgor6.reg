@@ -1,0 +1,62 @@
+REGEDIT
+; Registration information for OLE Automation Igor Pro 6.0 Application
+
+; Version independent registration. Points to Version 6.0
+[HKEY_CLASSES_ROOT\IgorPro.Application] = IgorPro 6.0 Application
+[HKEY_CLASSES_ROOT\IgorPro.Application\Clsid] = {f13943f7-0b3a-4bd8-b429-b41750ce8ff3}
+[HKEY_CLASSES_ROOT\IgorPro.Application\CurVer] = IgorPro.Application.6
+
+; Version 6.0 registration
+[HKEY_CLASSES_ROOT\IgorPro.Application.6] = IgorPro 6.0 Application
+[HKEY_CLASSES_ROOT\IgorPro.Application.6\Clsid] = {f13943f7-0b3a-4bd8-b429-b41750ce8ff3}
+
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}] = IgorPro 6.0 Application
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}\ProgID] = IgorPro.Application.6
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}\VersionIndependentProgID] = IgorPro.Application
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}\LocalServer32] = %TargetDir%\Igor.exe /I /Automation
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}\TypeLib] = {a6e18513-4919-403b-80ba-6fe816a551bc}
+[HKEY_CLASSES_ROOT\CLSID\{f13943f7-0b3a-4bd8-b429-b41750ce8ff3}\Programmable]
+
+; Type library registration information
+[HKEY_CLASSES_ROOT\TypeLib\{a6e18513-4919-403b-80ba-6fe816a551bc}]
+[HKEY_CLASSES_ROOT\TypeLib\{a6e18513-4919-403b-80ba-6fe816a551bc}]\6.0 = IgorPro 6.0 Type Library
+[HKEY_CLASSES_ROOT\TypeLib\{a6e18513-4919-403b-80ba-6fe816a551bc}]\6.0\HELPDIR = ;English
+[HKEY_CLASSES_ROOT\TypeLib\{a6e18513-4919-403b-80ba-6fe816a551bc}]\6.0\9\win32 = %TargetDir%\IgorPro.tlb
+
+; Interface registration. All interfaces that support vtable binding must be registered as follows.
+
+; IID_IApplication = {e22bb7ca-439f-44e1-aed0-cd83092db7e8}
+; LIBID_Application = {a6e18513-4919-403b-80ba-6fe816a551bc}
+[HKEY_CLASSES_ROOT\Interface\{e22bb7ca-439f-44e1-aed0-cd83092db7e8}] = IApplication
+HKEY_CLASSES_ROOT\Interface\{e22bb7ca-439f-44e1-aed0-cd83092db7e8}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{e22bb7ca-439f-44e1-aed0-cd83092db7e8}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IWave = {f5e4f9a9-085d-4ad5-bccc-84b23f624720}
+HKEY_CLASSES_ROOT\Interface\{f5e4f9a9-085d-4ad5-bccc-84b23f624720} = IWave
+HKEY_CLASSES_ROOT\Interface\{f5e4f9a9-085d-4ad5-bccc-84b23f624720}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{f5e4f9a9-085d-4ad5-bccc-84b23f624720}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IWaves = {5423c0ba-45da-4720-b0ad-4d16ff77dd25}
+HKEY_CLASSES_ROOT\Interface\{5423c0ba-45da-4720-b0ad-4d16ff77dd25} = IWaves
+HKEY_CLASSES_ROOT\Interface\{5423c0ba-45da-4720-b0ad-4d16ff77dd25}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{5423c0ba-45da-4720-b0ad-4d16ff77dd25}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IVariable = {9e46fcca-4575-470c-b919-8ce229d0ba7a}
+HKEY_CLASSES_ROOT\Interface\{9e46fcca-4575-470c-b919-8ce229d0ba7a} = IVariable
+HKEY_CLASSES_ROOT\Interface\{9e46fcca-4575-470c-b919-8ce229d0ba7a}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{9e46fcca-4575-470c-b919-8ce229d0ba7a}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IVariables = {1c5a09d8-baba-4866-b66d-9cf430fa6efb}
+HKEY_CLASSES_ROOT\Interface\{1c5a09d8-baba-4866-b66d-9cf430fa6efb} = IVariables
+HKEY_CLASSES_ROOT\Interface\{1c5a09d8-baba-4866-b66d-9cf430fa6efb}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{1c5a09d8-baba-4866-b66d-9cf430fa6efb}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IDataFolder = {86e460ce-1d17-40de-965c-679b7a4b2da5}
+HKEY_CLASSES_ROOT\Interface\{86e460ce-1d17-40de-965c-679b7a4b2da5} = IID_IDataFolder
+HKEY_CLASSES_ROOT\Interface\{86e460ce-1d17-40de-965c-679b7a4b2da5}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{86e460ce-1d17-40de-965c-679b7a4b2da5}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+
+; IID_IDataFolders = {ffa276e3-8ecd-4996-b330-84effccb449a}
+HKEY_CLASSES_ROOT\Interface\{ffa276e3-8ecd-4996-b330-84effccb449a} = IID_IDataFolders
+HKEY_CLASSES_ROOT\Interface\{ffa276e3-8ecd-4996-b330-84effccb449a}\TypeLib = {a6e18513-4919-403b-80ba-6fe816a551bc}
+HKEY_CLASSES_ROOT\Interface\{ffa276e3-8ecd-4996-b330-84effccb449a}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
